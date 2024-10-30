@@ -25,12 +25,12 @@ namespace ClientApp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("rrr");
+            MessageBox.Show("NikitaTop");
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Nikitalox");
+            MessageBox.Show("SashatTop");
         }
     }
 }
