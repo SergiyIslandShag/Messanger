@@ -23,14 +23,24 @@ namespace ClientApp
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("NikitaTop");
-        }
+		private void Send(object sender, RoutedEventArgs e)
+		{
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("SashatTop");
-        }
-    }
+		}
+
+		private void Search(object sender, RoutedEventArgs e)
+		{
+
+		}
+
+		private void Settings(object sender, RoutedEventArgs e)
+		{
+
+		}
+
+		private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+		{
+
+		}
+	}
 }
