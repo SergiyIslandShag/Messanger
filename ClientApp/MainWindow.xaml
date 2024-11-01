@@ -10,7 +10,7 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Margin="10" Grid.Row="0">
             <TextBox Width="400" Height="30" Foreground="Gray" 
-                     GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus"
+                    
                      Padding="5" FontStyle="Italic">Search</TextBox>
             <Button Width="147" Height="30"
                     Background="LightGreen" Foreground="White" FontWeight="Bold" Click="Search">Search</Button>
@@ -39,10 +39,10 @@
             <StackPanel Grid.Column="1" Margin="5">
                 <TextBox Height="400" VerticalScrollBarVisibility="Auto"
                           Margin="0,0,0,10" Text="Chat"
-                         Background="White" Padding="10" FontSize="14" TextChanged="TextBox_TextChanged"></TextBox>
+                         Background="White" Padding="10" FontSize="14" ></TextBox>
                 <StackPanel Orientation="Horizontal">
                     <TextBox Width="400" Height="30" Text="Enter message:" Foreground="Gray" 
-                             GotFocus="MessageBox_GotFocus" LostFocus="MessageBox_LostFocus"
+                            
                              Padding="5" FontStyle="Italic">
                     </TextBox>
                     <Button Width="54" Height="30" Margin="5,0,0,0"
