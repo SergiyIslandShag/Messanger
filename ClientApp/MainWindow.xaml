@@ -41,6 +41,10 @@
                          Background="White" Padding="10" FontSize="14"></TextBox>
                 <StackPanel Orientation="Horizontal">
                     <TextBox Width="375" Height="30" Text="Enter message:" Foreground="Gray" 
+                         Background="White" Padding="10" FontSize="14" ></TextBox>
+                <StackPanel Orientation="Horizontal">
+                    <TextBox Width="400" Height="30" Text="Enter message:" Foreground="Gray" 
+                            
                              Padding="5" FontStyle="Italic">
                     </TextBox>
                     <Button Width="74" Height="30" Margin="5,0,0,0"
