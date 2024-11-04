@@ -22,7 +22,6 @@ namespace ClientApp
         {
 			InitializeComponent();
         }
-
 		private void Send(object sender, RoutedEventArgs e)
 		{
 
