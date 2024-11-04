@@ -22,7 +22,6 @@ namespace ClientApp
         {
 			InitializeComponent();
         }
-
 		private void Send(object sender, RoutedEventArgs e)
 		{
 
@@ -35,7 +34,8 @@ namespace ClientApp
 
 		private void Settings(object sender, RoutedEventArgs e)
 		{
-			
+			Settings settings = new Settings();
+			settings.Show();	
 		}
 
 		private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
