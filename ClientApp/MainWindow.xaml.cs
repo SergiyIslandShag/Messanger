@@ -20,7 +20,7 @@ namespace ClientApp
     {
         public MainWindow()
         {
-            InitializeComponent();
+			InitializeComponent();
         }
 
 		private void Send(object sender, RoutedEventArgs e)
