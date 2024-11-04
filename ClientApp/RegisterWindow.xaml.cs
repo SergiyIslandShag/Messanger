@@ -10,8 +10,7 @@ namespace ClientApp
 		{
 			InitializeComponent();
 		}
-
-		private void Button_Click(object sender, RoutedEventArgs e)
+		private void Register(object sender, RoutedEventArgs e)
 		{
 			string name = NameTextBox.Text;
 			string email = EmailTextBox.Text;
@@ -30,6 +29,11 @@ namespace ClientApp
 			mainWindow.Show();
 
 			this.Close();
+		}
+		private void Login(object sender, RoutedEventArgs e)
+		{
+			Login login = new Login();
+			login.Show();
 		}
 	}
 }
