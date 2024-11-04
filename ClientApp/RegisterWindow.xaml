@@ -4,18 +4,18 @@
         Title="Registration" Height="350" Width="450" Background="LightBlue">
     <Grid Margin="20">
         <StackPanel>
-            <TextBlock Text="Registration" FontWeight="Black" FontSize="20" Margin="0,0,0,20"></TextBlock>
+            <TextBlock Text="Registration" FontWeight="Black" FontSize="20" Margin="0,0,0,20" />
 
-            <Label Content="Name:" FontWeight="Black"></Label>
-            <TextBox Name="NameTextBox" Margin="0,0,0,10" Height="25"></TextBox>
+            <Label Content="Name:" FontWeight="Black" />
+            <TextBox Name="NameTextBox" Margin="0,0,0,10" Height="25" />
 
-            <Label Content="Email:" FontWeight="Black"></Label>
-            <TextBox Name="EmailTextBox" Margin="0,0,0,10" Height="25"></TextBox>
+            <Label Content="Email:" FontWeight="Black" />
+            <TextBox Name="EmailTextBox" Margin="0,0,0,10" Height="25" />
 
-            <Label Content="Password:" FontWeight="Black"></Label>
-            <PasswordBox Name="PasswordBox" Margin="0,0,0,20" Height="25"></PasswordBox>
+            <Label Content="Password:" FontWeight="Black" />
+            <PasswordBox Name="PasswordBox" Margin="0,0,0,20" Height="25" />
 
-            <Button Content="Register" FontWeight="Black" Click="Button_Click"></Button>
+            <Button Content="Register" FontWeight="Black" Click="Button_Click" />
         </StackPanel>
     </Grid>
 </Window>
