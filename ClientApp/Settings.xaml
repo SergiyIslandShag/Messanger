@@ -4,21 +4,21 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClientApp"
-        mc:Ignorable="d"
         Title="MainWindow" Background="LightGray" Height="400" Width="450">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="102.277"></ColumnDefinition>
+            <ColumnDefinition Width="97.723"/>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Margin="20" Grid.Column="0">
+        <StackPanel Margin="20,20,20,20" Grid.Column="0" Grid.ColumnSpan="2">
             <Button Name="btnPremium" Width="150" Height="30" Margin="0,5">Premium</Button>
             <Button Name="btnPersonalInfo" Width="150" Height="30" Margin="0,5">Personal Info</Button>
             <Button Name="btnChangeTheme" Width="150" Height="30">Change Theme</Button>
         </StackPanel>
 
-        <ListBox Background="DarkGray" Name="userInfoListBox" Grid.Column="1" Margin="20">Dani</ListBox>
+        <ListBox Background="DarkGray" Name="userInfoListBox" Grid.Column="2" Margin="20,20,20,20">Dani</ListBox>
     </Grid>
 </Window>
 
