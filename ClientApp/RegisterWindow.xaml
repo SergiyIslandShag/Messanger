@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Registration" Height="350" Width="450">
     <Window.Background>
-        <ImageBrush ImageSource="https://img.freepik.com/free-vector/gradient-wavy-background-with-spheres_23-2149111796.jpg?semt=ais_hybrid"></ImageBrush>
+        <ImageBrush ImageSource="https://img.freepik.com/free-photo/purple-iridescent-texture-background_23-2151839362.jpg?semt=ais_hybrid"></ImageBrush>
     </Window.Background>
 
     <Grid Margin="20">
