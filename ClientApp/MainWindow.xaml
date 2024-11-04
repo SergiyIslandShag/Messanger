@@ -23,15 +23,15 @@
             </Grid.ColumnDefinitions>
             <ListBox Grid.Column="0" Margin="5" Background="White">
                 <ListBox.Items>
-                    <Button Height="45" Width="285" FontSize="14" Padding="10">Contact 1</Button>
-                    <Button Height="45" Width="285" FontSize="14" Padding="10">Contact 2</Button>
-                    <Button Height="45" Width="285" FontSize="14" Padding="10">Contact 3</Button>
-                    <Button Height="45" Width="285" FontSize="14" Padding="10">Contact 4</Button>
-                    <Button Height="45" Width="285" FontSize="14" Padding="10">Contact 5</Button>
-                    <Button Height="45" Width="285" FontSize="14" Padding="10">Contact 6</Button>
-                    <Button Height="45" Width="285" FontSize="14" Padding="10">Contact 7</Button>
-                    <Button Height="45" Width="285" FontSize="14" Padding="10">Contact 8</Button>
-                    <Button Height="45" Width="285" FontSize="14" Padding="10">Contact 9</Button>
+                    <Button Height="45" Width="308" FontSize="14" Padding="10">Contact 1</Button>
+                    <Button Height="45" Width="308" FontSize="14" Padding="10">Contact 2</Button>
+                    <Button Height="45" Width="308" FontSize="14" Padding="10">Contact 3</Button>
+                    <Button Height="45" Width="308" FontSize="14" Padding="10">Contact 4</Button>
+                    <Button Height="45" Width="308" FontSize="14" Padding="10">Contact 5</Button>
+                    <Button Height="45" Width="308" FontSize="14" Padding="10">Contact 6</Button>
+                    <Button Height="45" Width="308" FontSize="14" Padding="10">Contact 7</Button>
+                    <Button Height="45" Width="308" FontSize="14" Padding="10">Contact 8</Button>
+                    <Button Height="45" Width="308" FontSize="14" Padding="10">Contact 9</Button>
                 </ListBox.Items>
             </ListBox>
             <StackPanel Grid.Column="1" Margin="5">
@@ -40,6 +40,8 @@
                 <StackPanel Orientation="Horizontal">
                     <TextBox Width="375" Height="45" Foreground="Gray" Background="White" Padding="10" FontSize="14" Text="Enter message:"></TextBox>
                     <Button Width="102" Height="45" Margin="5,0,0,0" Background="LightGreen" Foreground="White" FontWeight="Bold" Click="Send">Send</Button>
+                    <TextBox Width="375" Height="44" Foreground="Gray" Background="White" Padding="10" FontSize="14" Text="Enter message:"/>
+                    <Button Width="107" Height="44" Margin="5,0,0,0" Background="LightGreen" Foreground="White" FontWeight="Bold" Click="Send">Send</Button>
                 </StackPanel>
             </StackPanel>
         </Grid>
