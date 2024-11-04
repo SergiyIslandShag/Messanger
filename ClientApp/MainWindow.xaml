@@ -1,7 +1,10 @@
 ﻿<Window x:Class="ClientApp.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Messenger" Height="650" Width="850" Background="LightSkyBlue">
+        Title="Messenger" Height="650" Width="850">
+    <Window.Background>
+        <ImageBrush ImageSource="https://img.freepik.com/premium-photo/neon-navy-abstract-creative-background-design_851755-317694.jpg?w=360"></ImageBrush>
+    </Window.Background>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -40,7 +43,5 @@
                 </StackPanel>
             </StackPanel>
         </Grid>
-        <TextBox Grid.Row="2" Background="Violet" TextAlignment="Center" VerticalAlignment="Bottom" IsReadOnly="True"
-                 Text="❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️" Height="30"/>
     </Grid>
 </Window>
