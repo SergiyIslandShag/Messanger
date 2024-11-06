@@ -31,9 +31,9 @@ namespace ClientApp
 			InitializeComponent();
             this.DataContext = messages;
             client = new UdpClient();
-            string address = ConfigurationManager.AppSettings["ServerAddress"]!;
-            short port = short.Parse(ConfigurationManager.AppSettings["ServerPort"]!);
-            serverEndPoint = new IPEndPoint(IPAddress.Parse(address), port);
+            //string address = ConfigurationManager.AppSettings["ServerAddress"]!;
+            //short port = short.Parse(ConfigurationManager.AppSettings["ServerPort"]!);
+            //serverEndPoint = new IPEndPoint(IPAddress.Parse(address), port);
         }
 		
         private void Send(object sender, RoutedEventArgs e)
