@@ -30,10 +30,12 @@ namespace ClientApp
 
 			this.Close();
 		}
+
 		private void Login(object sender, RoutedEventArgs e)
 		{
-			Login login = new Login();
-			login.Show();
+			Login loginWindow = new Login(this);
+			loginWindow.Show();
+			this.Hide();
 		}
 	}
 }

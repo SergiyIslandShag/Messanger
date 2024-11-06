@@ -1,29 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace ClientApp
 {
-    public partial class Login : Window
-    {
-        public Login()
-        {
-            InitializeComponent();
-        }
+	public partial class Login : Window
+	{
+		private Window _registrationWindow;
 
-		private void Button_Click(object sender, RoutedEventArgs e)
+		public Login(Window registrationWindow)
 		{
+			InitializeComponent();
+			_registrationWindow = registrationWindow;
+		}
 
+		private void LoginC(object sender, RoutedEventArgs e)
+		{
+			string username = UsernameTextBox.Text.Trim();
+			string password = PasswordBox.Password.Trim();
+
+			if (username == "admin" && password == "password123")
+			{
+				MessageBox.Show("Login successful!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+
+				MainWindow mainWindow = new MainWindow();
+				mainWindow.Show();
+				this.Close();
+				_registrationWindow?.Close();
+			}
+			else
+			{
+				MessageBox.Show("Invalid username or password.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+			}
 		}
 	}
 }
