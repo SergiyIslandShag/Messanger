@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,22 +14,40 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Configuration;
+using System.Collections.ObjectModel;
+using data_access.NewFolder;
 
 namespace ClientApp
 {
 
     public partial class MainWindow : Window
     {
+        IPEndPoint serverEndPoint;
+        ObservableCollection<MessageInfo> messages = new ObservableCollection<MessageInfo>();
+        UdpClient client;
         public MainWindow()
         {
 			InitializeComponent();
+            this.DataContext = messages;
+            client = new UdpClient();
+            string address = ConfigurationManager.AppSettings["ServerAddress"]!;
+            short port = short.Parse(ConfigurationManager.AppSettings["ServerPort"]!);
+            serverEndPoint = new IPEndPoint(IPAddress.Parse(address), port);
         }
-		private void Send(object sender, RoutedEventArgs e)
-		{
-
-		}
-
-		private void Search(object sender, RoutedEventArgs e)
+		
+        private void Send(object sender, RoutedEventArgs e)
+        {
+            string message = textbox.Text;
+            SendMessage(message);
+            
+        }
+        private async void SendMessage(string message)
+        {
+            byte[] data = Encoding.UTF8.GetBytes(message);
+            await client.SendAsync(data, serverEndPoint);
+        }
+        private void Search(object sender, RoutedEventArgs e)
 		{
 
 		}
@@ -42,5 +62,10 @@ namespace ClientApp
 		{
 
 		}
-	}
+
+        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+
+        }
+    }
 }
