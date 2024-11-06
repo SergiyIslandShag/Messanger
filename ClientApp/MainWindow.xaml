@@ -40,8 +40,6 @@
                 <StackPanel Orientation="Horizontal">
                     <TextBox Width="375" Height="45" Foreground="Gray" Background="White" Padding="10" FontSize="14" Text="Enter message:" Name="textbox"></TextBox>
                     <Button Width="112" Height="45" Margin="5,0,0,0" Background="LightGreen" Foreground="White" FontWeight="Bold" Click="Send">Send</Button>
-                    <TextBox Width="375" Height="44" Foreground="Gray" Background="White" Padding="10" FontSize="14" Text="Enter message:"/>
-                    <Button Width="107" Height="44" Margin="5,0,0,0" Background="LightGreen" Foreground="White" FontWeight="Bold" Click="Send">Send</Button>
                 </StackPanel>
             </StackPanel>
         </Grid>
