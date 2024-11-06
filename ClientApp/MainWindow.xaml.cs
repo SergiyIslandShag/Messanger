@@ -25,11 +25,12 @@ namespace ClientApp
     {
         IPEndPoint serverEndPoint;
         ObservableCollection<MessageInfo> messages = new ObservableCollection<MessageInfo>();
+        ObservableCollection<User> users = new ObservableCollection<User>();
         UdpClient client;
         public MainWindow()
         {
 			InitializeComponent();
-            this.DataContext = messages;
+            this.DataContext = users;
             client = new UdpClient();
             //string address = ConfigurationManager.AppSettings["ServerAddress"]!;
             //short port = short.Parse(ConfigurationManager.AppSettings["ServerPort"]!);
@@ -68,6 +69,7 @@ namespace ClientApp
 
         }
 
+
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{
 
@@ -80,6 +82,11 @@ namespace ClientApp
 
 		private void Button_Click_2(object sender, RoutedEventArgs e)
 		{
+
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            users.Add(new User(0,"Sergiy", "2192318093",  "1217.0.0.1", 8080));
 
         }
     }

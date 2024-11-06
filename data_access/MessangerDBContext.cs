@@ -32,7 +32,7 @@ namespace data_access
             modelBuilder.Entity<User>().Property(a => a.PhoneNumber).IsRequired();
             modelBuilder.Entity<User>().Property(a => a.Name).IsRequired(); 
             modelBuilder.Entity<MessageInfo>().Property(a => a.Text).IsRequired();
-
+           
             modelBuilder.Entity<User>().HasMany(u=>u.Messages).WithOne(m=>m.User).HasForeignKey(f => f.UserId);
                 
         }
