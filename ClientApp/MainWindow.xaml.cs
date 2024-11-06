@@ -69,9 +69,25 @@ namespace ClientApp
 
         }
 
+
+		private void Button_Click(object sender, RoutedEventArgs e)
+		{
+
+        }
+
+		private void Button_Click_1(object sender, RoutedEventArgs e)
+		{
+
+        }
+
+		private void Button_Click_2(object sender, RoutedEventArgs e)
+		{
+
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             users.Add(new User(0,"Sergiy", "2192318093",  "1217.0.0.1", 8080));
+
         }
     }
 }
