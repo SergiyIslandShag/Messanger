@@ -4,21 +4,20 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClientApp"
-        Title="MainWindow" Background="LightGray" Height="400" Width="450">
-    <Grid>
+        Title="Settings" Background="LightGray" Height="400" Width="500">
+    <Grid Margin="10">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="102.277"></ColumnDefinition>
-            <ColumnDefinition Width="97.723"/>
+            <ColumnDefinition Width="150"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-
-        <StackPanel Margin="20,20,20,20" Grid.Column="0" Grid.ColumnSpan="2">
-            <Button Name="btnPremium" Width="150" Height="30" Margin="0,5">Premium</Button>
-            <Button Name="btnPersonalInfo" Width="150" Height="30" Margin="0,5">Personal Info</Button>
-            <Button Name="btnChangeTheme" Width="150" Height="30">Change Theme</Button>
+        <StackPanel Grid.Column="0" Margin="10">
+            <Button Name="btnPremium" Width="130" Height="30" Margin="0,10,0,5" Click="btnPremium_Click">Activate Premium</Button>
+            <TextBox Name="txtPremiumCode" Width="130" Height="25" Margin="0,5">Enter code</TextBox>
+            <Button Name="btnPersonalInfo" Width="130" Height="30" Margin="0,10">Personal Info</Button>
+            <Button Name="btnChangeTheme" Width="130" Height="30" Margin="0,10">Change Theme</Button>
         </StackPanel>
-
-        <ListBox Background="DarkGray" Name="userInfoListBox" Grid.Column="2" Margin="20,20,20,20">Dani</ListBox>
+        <ListBox Background="DarkGray" Name="userInfoListBox" Grid.Column="1" Margin="10">
+            <ListBoxItem>Dani</ListBoxItem>
+        </ListBox>
     </Grid>
 </Window>
-

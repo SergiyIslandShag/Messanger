@@ -14,14 +14,36 @@ using System.Windows.Shapes;
 
 namespace ClientApp
 {
-    /// <summary>
-    /// Interaction logic for Settings.xaml
-    /// </summary>
     public partial class Settings : Window
     {
+        private const string PremiumCode = "timlidtop";
+        private bool isPremiumActivated = false;
         public Settings()
         {
             InitializeComponent();
+        }
+
+        private void btnPremium_Click(object sender, RoutedEventArgs e)
+        {
+            if (txtPremiumCode.Text == PremiumCode)
+            {
+                if (!isPremiumActivated)
+                {
+                    userInfoListBox.Items.Clear();
+                    userInfoListBox.Items.Add("Dani ★");
+                    isPremiumActivated = true;
+                    MessageBox.Show("Premium version activated!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Premium version is already activated.", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Invalid code. Please try again.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
         }
     }
 }
