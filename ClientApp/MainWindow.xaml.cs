@@ -83,5 +83,10 @@ namespace ClientApp
 		private void Button_Click_2(object sender, RoutedEventArgs e)
 		{
 		}
-	}
+
+		private void CreateGroup_Click(object sender, RoutedEventArgs e)
+		{
+
+        }
+    }
 }
