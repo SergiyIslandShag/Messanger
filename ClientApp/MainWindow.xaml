@@ -25,7 +25,6 @@
             <Button Width="147" Height="30" Background="LightGreen" Foreground="White" FontWeight="Bold" Click="Search">Search</Button>
             <Button Width="147" Height="30" Margin="5,0,0,0" Background="LightGreen" Foreground="White" FontWeight="Bold" Click="Settings">Settings</Button>
 
-        </StackPanel>
         <Grid Grid.Row="1" Margin="10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*"></ColumnDefinition>
@@ -37,8 +36,6 @@
                 </ListBox.Items>
 
                 <ListBox Grid.Column="0" Margin="5" Background="White" ItemsSource="{Binding}">
-
-
                 </ListBox>
                 <StackPanel Grid.Column="1" Margin="5">
                     <TextBox Height="400" VerticalScrollBarVisibility="Auto" Margin="0,0,0,10" Text="Chat"
