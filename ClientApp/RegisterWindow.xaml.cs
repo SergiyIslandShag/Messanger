@@ -1,4 +1,5 @@
-﻿using System;
+﻿using data_access;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -6,11 +7,16 @@ namespace ClientApp
 {
 	public partial class RegisterWindow : Window
 	{
-		public RegisterWindow()
-		{
-			InitializeComponent();
-		}
-		private void Register(object sender, RoutedEventArgs e)
+            private readonly MessangerDBContext _dbContext;
+            private readonly Window _registrationWindow;
+
+            public RegisterWindow(Window registrationWindow)
+            {
+                InitializeComponent();
+                _dbContext = new MessangerDBContext();
+                _registrationWindow = registrationWindow;
+            }
+            private void RegisterQ(object sender, RoutedEventArgs e)
 		{
 			string name = NameTextBox.Text;
 			string email = EmailTextBox.Text;
