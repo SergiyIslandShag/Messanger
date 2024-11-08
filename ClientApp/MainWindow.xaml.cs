@@ -38,15 +38,21 @@ namespace ClientApp
 		}
 
 		private void Send(object sender, RoutedEventArgs e)
-		{
-			//string message = textbox.Text;
-			//SendMessage(message);
-
-		}
+        {
+            string message = textbox.Text;
+            if (!string.IsNullOrEmpty(message))
+            {
+                SendMessage(message);
+                textbox.Clear();
+            }
+        }
 		private async void SendMessage(string message)
 		{
-			byte[] data = Encoding.UTF8.GetBytes(message);
-			await client.SendAsync(data, serverEndPoint);
+			if (serverEndPoint != null)
+			{
+				byte[] data = Encoding.UTF8.GetBytes(message);
+				await client.SendAsync(data, serverEndPoint);
+			}
 		}
 		private void Search(object sender, RoutedEventArgs e)
 		{
@@ -59,34 +65,15 @@ namespace ClientApp
 			settings.Show();
 		}
 
-		private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+		private void Add_Contact(object sender, RoutedEventArgs e)
 		{
 
 		}
 
-		private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
+		private void CreateGroup(object sender, RoutedEventArgs e)
 		{
-
+			//CreateGroupWindow createGroupWindow = new CreateGroupWindow(users);
+			//createGroupWindow.Show();
 		}
-
-
-		private void Button_Click(object sender, RoutedEventArgs e)
-		{
-
-		}
-
-		private void Button_Click_1(object sender, RoutedEventArgs e)
-		{
-
-		}
-
-		private void Button_Click_2(object sender, RoutedEventArgs e)
-		{
-		}
-
-		private void CreateGroup_Click(object sender, RoutedEventArgs e)
-		{
-
-        }
-    }
+	}
 }
