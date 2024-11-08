@@ -18,7 +18,7 @@
             <Label Content="Password:" FontWeight="Black" Foreground="White" ></Label>
             <PasswordBox Name="PasswordBox" Margin="0,0,0,20" Height="25" ></PasswordBox>
 
-            <Button FontWeight="Black" Click="Register">Register</Button>
+            <Button FontWeight="Black" Click="RegisterQ">Register</Button>
             <Button Margin="20" HorizontalAlignment="Right" FontWeight="Black" Click="Login" Width="104">Login</Button>
         </StackPanel>
     </Grid>

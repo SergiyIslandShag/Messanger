@@ -10,11 +10,10 @@ namespace ClientApp
             private readonly MessangerDBContext _dbContext;
             private readonly Window _registrationWindow;
 
-            public RegisterWindow(Window registrationWindow)
+            public RegisterWindow()
             {
                 InitializeComponent();
                 _dbContext = new MessangerDBContext();
-                _registrationWindow = registrationWindow;
             }
             private void RegisterQ(object sender, RoutedEventArgs e)
 		{
