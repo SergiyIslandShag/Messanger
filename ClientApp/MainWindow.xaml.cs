@@ -17,6 +17,8 @@ using System.Windows.Shapes;
 using System.Configuration;
 using System.Collections.ObjectModel;
 using data_access.NewFolder;
+using Microsoft.EntityFrameworkCore;
+using data_access;
 
 namespace ClientApp
 {
@@ -26,7 +28,8 @@ namespace ClientApp
 		IPEndPoint serverEndPoint;
 		ObservableCollection<MessageInfo> messages = new ObservableCollection<MessageInfo>();
 		ObservableCollection<User> users = new ObservableCollection<User>();
-		UdpClient client;
+        MessangerDBContext messangerDBContext = new MessangerDBContext();
+        UdpClient client;
 		public MainWindow()
 		{
 			InitializeComponent();
@@ -54,11 +57,6 @@ namespace ClientApp
 				await client.SendAsync(data, serverEndPoint);
 			}
 		}
-		private void Search(object sender, RoutedEventArgs e)
-		{
-
-		}
-
 		private void Settings(object sender, RoutedEventArgs e)
 		{
 			Settings settings = new Settings();
@@ -67,7 +65,20 @@ namespace ClientApp
 
 		private void Add_Contact(object sender, RoutedEventArgs e)
 		{
+			User userr = new User();
+			AddContact addContact = new AddContact(userr);
+			userr.Port = 4040;
+			userr.ServerAddress = "127.0.0.1";
+			userr.PhoneNumber = "3333";
 
-		}
+
+			addContact.ShowDialog();
+		
+                users.Add(userr);
+                messangerDBContext.Add(userr);
+                messangerDBContext.SaveChanges();
+           
+			
+        }
 	}
 }

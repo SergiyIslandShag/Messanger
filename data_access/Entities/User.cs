@@ -17,10 +17,13 @@ namespace data_access.NewFolder
         public string ServerAddress { get; set; }
         public int Port { get; set; }
         public ICollection<MessageInfo> Messages { get; set; }
-        public User(int id, string name, string email, string password, string address, int port)
+        public User() { }   
+        public User(int id, string name, string password, string email,  string address, int port)
         {
             Id = id;
             Name = name;
+            Password= password;
+            Email = email;
             ServerAddress = address;
             Port = port;
         }               
