@@ -3,13 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Messenger" Height="650" Width="850">
     <Window.Background>
-        <ImageBrush ImageSource="https://img.freepik.com/premium-photo/neon-navy-abstract-creative-background-design_851755-317694.jpg?w=360" />
+        <ImageBrush ImageSource="https://img.freepik.com/premium-photo/neon-navy-abstract-creative-background-design_851755-317694.jpg?w=360"></ImageBrush>
     </Window.Background>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal" Margin="10" Grid.Row="0">
@@ -23,16 +23,13 @@
                 Search
             </Button>
 
-            <TextBox Width="222" Height="30" Foreground="Gray" Padding="5" FontStyle="Italic" Text="Search" />
-            <Button Width="150" Height="30" Margin="5,0,0,0" Background="LightGreen" Foreground="White" FontWeight="Bold" Click="CreateGroup">
-                Create Group
-            </Button>
+            <TextBox Width="355" Height="30" Foreground="Gray" Padding="5" FontStyle="Italic" Text="Search:"></TextBox>
         </StackPanel>
 
         <Grid Grid.Row="1" Margin="10">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*" />
-                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
             <ListBox Grid.Column="0" Margin="5" Background="White" ItemsSource="{Binding}">
@@ -40,11 +37,11 @@
 
             <StackPanel Grid.Column="1" Margin="5">
                 <TextBox Height="400" VerticalScrollBarVisibility="Auto" Margin="0,0,0,10" Text="Chat"
-                          Background="White" Padding="10" FontSize="14" IsReadOnly="True" />
+                          Background="White" Padding="10" FontSize="14" IsReadOnly="True"></TextBox>
 
                 <StackPanel Orientation="Horizontal">
-                    <TextBox Width="375" Height="45" Foreground="Gray" Background="White" Padding="10" FontSize="14" Text="Enter message:" x:Name="textbox" />
-                    <Button Width="112" Height="45" Margin="5,0,0,0" Background="LightGreen" Foreground="White" FontWeight="Bold" Click="Send" Content="Send" />
+                    <TextBox Width="375" Height="45" Foreground="Gray" Background="White" Padding="10" FontSize="14" Text="Enter message:" x:Name="textbox"></TextBox>
+                    <Button Width="112" Height="45" Margin="5,0,0,0" Background="LightGreen" Foreground="White" FontWeight="Bold" Click="Send" Content="Send"></Button>
                 </StackPanel>
             </StackPanel>
         </Grid>

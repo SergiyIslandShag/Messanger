@@ -69,11 +69,5 @@ namespace ClientApp
 		{
 
 		}
-
-		private void CreateGroup(object sender, RoutedEventArgs e)
-		{
-			//CreateGroupWindow createGroupWindow = new CreateGroupWindow(users);
-			//createGroupWindow.Show();
-		}
 	}
 }
