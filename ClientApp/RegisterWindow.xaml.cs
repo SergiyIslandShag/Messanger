@@ -43,5 +43,10 @@ namespace ClientApp
 			loginWindow.Show();
 			this.Hide();
 		}
+
+		private void Register(object sender, RoutedEventArgs e)
+		{
+
+		}
 	}
 }

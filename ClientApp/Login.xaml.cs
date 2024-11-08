@@ -5,11 +5,16 @@ namespace ClientApp
 	public partial class Login : Window
 	{
 		private Window _registrationWindow;
+		private RegisterWindow registerWindow;
 
-		public Login(Window registrationWindow)
+		public Login()
 		{
 			InitializeComponent();
-			_registrationWindow = registrationWindow;
+		}
+
+		public Login(RegisterWindow registerWindow)
+		{
+			this.registerWindow = registerWindow;
 		}
 
 		private void LoginC(object sender, RoutedEventArgs e)
