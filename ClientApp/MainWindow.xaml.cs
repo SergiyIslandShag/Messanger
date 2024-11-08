@@ -54,10 +54,6 @@ namespace ClientApp
 				await client.SendAsync(data, serverEndPoint);
 			}
 		}
-		private void Search(object sender, RoutedEventArgs e)
-		{
-
-		}
 
 		private void Settings(object sender, RoutedEventArgs e)
 		{
@@ -69,5 +65,5 @@ namespace ClientApp
 		{
 
 		}
-	}
+    }
 }

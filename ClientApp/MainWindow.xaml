@@ -7,41 +7,37 @@
     </Window.Background>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="31.04"></RowDefinition>
+            <RowDefinition Height="18.96"/>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <StackPanel Orientation="Horizontal" Margin="10" Grid.Row="0">
+        <StackPanel Orientation="Horizontal" Margin="10,10,10,10" Grid.Row="0" Grid.RowSpan="2" HorizontalAlignment="Right">
             <Button Width="150" Height="30" Margin="5,0,0,0" Background="LightGreen" Foreground="White" FontWeight="Bold" Click="Add_Contact">
                 Add Contact
             </Button>
-            <Button Width="150" Height="30" Margin="5,0,0,0" Background="LightGreen" Foreground="White" FontWeight="Bold" Click="Settings">
+            <Button Width="331" Height="30" Margin="5,0,0,0" Background="LightGreen" Foreground="White" FontWeight="Bold" Click="Settings" >
                 Settings
             </Button>
-            <Button Width="150" Height="30" Margin="5,0,0,0" Background="LightGreen" Foreground="White" FontWeight="Bold" Click="Search">
-                Search
-            </Button>
-
-            <TextBox Width="355" Height="30" Foreground="Gray" Padding="5" FontStyle="Italic" Text="Search:"></TextBox>
         </StackPanel>
 
-        <Grid Grid.Row="1" Margin="10">
+        <Grid Grid.Row="2" Margin="10,10,10,10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*"></ColumnDefinition>
                 <ColumnDefinition Width="3*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <ListBox Grid.Column="0" Margin="5" Background="White" ItemsSource="{Binding}">
+            <ListBox Grid.Column="0" Margin="5,-50,5,5" Background="White" ItemsSource="{Binding}">
             </ListBox>
 
             <StackPanel Grid.Column="1" Margin="5">
-                <TextBox Height="400" VerticalScrollBarVisibility="Auto" Margin="0,0,0,10" Text="Chat"
-                          Background="White" Padding="10" FontSize="14" IsReadOnly="True"></TextBox>
+                <TextBox Height="454"  VerticalScrollBarVisibility="Auto" Margin="0,0,0,10" Text="Chat"
+                          Background="White" Padding="10" FontSize="14" IsReadOnly="True" Width="480"></TextBox>
 
                 <StackPanel Orientation="Horizontal">
-                    <TextBox Width="375" Height="45" Foreground="Gray" Background="White" Padding="10" FontSize="14" Text="Enter message:" x:Name="textbox"></TextBox>
-                    <Button Width="112" Height="45" Margin="5,0,0,0" Background="LightGreen" Foreground="White" FontWeight="Bold" Click="Send" Content="Send"></Button>
+                    <TextBox Width="379" Height="45" Foreground="Gray" Background="White" Padding="10" FontSize="14" Text="Enter message:" x:Name="textbox"></TextBox>
+                    <Button Width="104" Height="45" Margin="5,0,0,0" Background="LightGreen" Foreground="White" FontWeight="Bold" Click="Send" Content="Send"></Button>
                 </StackPanel>
             </StackPanel>
         </Grid>
