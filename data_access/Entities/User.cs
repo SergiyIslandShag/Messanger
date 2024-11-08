@@ -10,19 +10,19 @@ namespace data_access.NewFolder
     public class User
 	{
 		public int Id { get; set; }
+		public string Name { get; set; }
 		public string Password {  get; set; }
-		public string Email {  get; set; }
-        public string Name { get; set; }
-        public string PhoneNumber { get; set; }
+		public string? Email { get; set; }
+		public string PhoneNumber { get; set; }
         public string ServerAddress { get; set; }
         public int Port { get; set; }
         public ICollection<MessageInfo> Messages { get; set; }
-        public User(int id, string name, string email, string password, string address, int port)
+        public User(string name, string email, string password, string phoneNumber)
         {
-            Id = id;
             Name = name;
-            ServerAddress = address;
-            Port = port;
-        }               
+            Password = password;
+            Email = email;
+            PhoneNumber = phoneNumber;
+		}               
     }
 }
