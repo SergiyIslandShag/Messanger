@@ -43,9 +43,5 @@ namespace ClientApp
 			this.Hide();
 		}
 
-		private void Register(object sender, RoutedEventArgs e)
-		{
-
-		}
 	}
 }
