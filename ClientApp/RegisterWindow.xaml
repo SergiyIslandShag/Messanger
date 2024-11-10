@@ -1,25 +1,30 @@
 ﻿<Window x:Class="ClientApp.RegisterWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Registration" Height="400" Width="500">
+        Title="Registration" Height="450" Width="600">
     <Window.Background>
         <ImageBrush ImageSource="https://img.freepik.com/free-photo/purple-iridescent-texture-background_23-2151839362.jpg?semt=ais_hybrid"></ImageBrush>
     </Window.Background>
     <Grid Margin="20">
         <StackPanel Margin="0,0,0,-10">
-            <TextBlock Text="Registration" FontWeight="Black" FontSize="20" Margin="0,0,0,20" Foreground="White" ></TextBlock>
+            <TextBlock Text="Registration" FontWeight="Black" FontSize="20" Margin="0,0,0,20" Foreground="White"></TextBlock>
 
-            <Label Content="Name:" FontWeight="Black" Foreground="White" ></Label>
-            <TextBox Name="NameTextBox" Margin="0,0,0,10" Height="25" ></TextBox>
+            <Label Content="Name:" FontWeight="Black" Foreground="White"></Label>
+            <TextBox Name="NameTextBox" Margin="0,0,0,10" Height="25"></TextBox>
 
             <Label Content="Email:" FontWeight="Black" Foreground="White"></Label>
-            <TextBox Name="EmailTextBox" Margin="0,0,0,10" Height="25" ></TextBox>
+            <TextBox Name="EmailTextBox" Margin="0,0,0,10" Height="25"></TextBox>
 
-            <Label Content="Password:" FontWeight="Black" Foreground="White" ></Label>
-            <PasswordBox Name="PasswordBox" Margin="0,0,0,20" Height="25" ></PasswordBox>
+            <Label Content="Phone Number:" FontWeight="Black" Foreground="White"></Label>
+            <TextBox Name="PhoneNumberTextBox" Margin="0,0,0,10" Height="25"></TextBox>
 
-            <Button FontWeight="Black" Click="RegisterQ">Register</Button>
-            <Button Margin="20" HorizontalAlignment="Right" FontWeight="Black" Click="Login" Width="104">Login</Button>
+            <Label Content="Password:" FontWeight="Black" Foreground="White"></Label>
+            <PasswordBox Name="PasswordBox" Margin="0,0,0,20" Height="25"></PasswordBox>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+                <Button Content="Register" FontWeight="Black" Click="RegisterQ" Width="100" Margin="0,0,10,0"></Button>
+                <Button Content="Login" FontWeight="Black" Click="Login" Width="100" Height="26"></Button>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Window>

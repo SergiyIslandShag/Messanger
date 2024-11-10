@@ -12,11 +12,6 @@ namespace ClientApp
 			InitializeComponent();
 		}
 
-		public Login(RegisterWindow registerWindow)
-		{
-			this.registerWindow = registerWindow;
-		}
-
 		private void LoginC(object sender, RoutedEventArgs e)
 		{
 			string username = UsernameTextBox.Text.Trim();

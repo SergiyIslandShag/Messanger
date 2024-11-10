@@ -1,4 +1,5 @@
 ﻿using data_access;
+using data_access.NewFolder;
 using System;
 using System.Windows;
 using System.Windows.Controls;
@@ -7,15 +8,15 @@ namespace ClientApp
 {
 	public partial class RegisterWindow : Window
 	{
-            private readonly MessangerDBContext _dbContext;
-            private readonly Window _registrationWindow;
+		private readonly MessangerDBContext _dbContext;
+		private readonly Window _registrationWindow;
 
-            public RegisterWindow()
-            {
-                InitializeComponent();
-                _dbContext = new MessangerDBContext();
-            }
-            private void RegisterQ(object sender, RoutedEventArgs e)
+		public RegisterWindow()
+		{
+			InitializeComponent();
+			_dbContext = new MessangerDBContext();
+		}
+		private void RegisterQ(object sender, RoutedEventArgs e)
 		{
 			string name = NameTextBox.Text;
 			string email = EmailTextBox.Text;
@@ -38,14 +39,9 @@ namespace ClientApp
 
 		private void Login(object sender, RoutedEventArgs e)
 		{
-			Login loginWindow = new Login(this);
+			Login loginWindow = new Login();
 			loginWindow.Show();
 			this.Hide();
-		}
-
-		private void Register(object sender, RoutedEventArgs e)
-		{
-
 		}
 	}
 }
