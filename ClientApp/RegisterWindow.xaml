@@ -22,7 +22,7 @@
             <PasswordBox Name="PasswordBox" Margin="0,0,0,20" Height="25"></PasswordBox>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
-                <Button Content="RegisterQ" FontWeight="Black" Click="RegisterQ" Width="100" Margin="0,0,10,0"></Button>
+                <Button Content="Register" FontWeight="Black" Click="RegisterQ" Width="100" Margin="0,0,10,0"></Button>
                 <Button Content="Login" FontWeight="Black" Click="Login" Width="100" Height="26"></Button>
             </StackPanel>
         </StackPanel>

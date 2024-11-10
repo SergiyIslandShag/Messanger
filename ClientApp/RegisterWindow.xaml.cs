@@ -3,30 +3,46 @@ using data_access.NewFolder;
 using System;
 using System.Windows;
 using System.Windows.Controls;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace ClientApp
 {
 	public partial class RegisterWindow : Window
 	{
 		private readonly MessangerDBContext _dbContext;
-		private readonly Window _registrationWindow;
 
 		public RegisterWindow()
 		{
 			InitializeComponent();
 			_dbContext = new MessangerDBContext();
 		}
+
 		private void RegisterQ(object sender, RoutedEventArgs e)
 		{
+			User user = new User();
+
 			string name = NameTextBox.Text;
 			string email = EmailTextBox.Text;
 			string password = PasswordBox.Password;
+			string phoneNumber = PhoneNumberTextBox.Text;
 
-			if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
+			if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(phoneNumber))
 			{
 				MessageBox.Show("Please fill in all fields.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
 				return;
 			}
+
+			user.Name = name;
+			user.Email = email;
+			user.Password = password;
+			user.PhoneNumber = phoneNumber;
+			user.Port = 4040;
+			user.ServerAddress = "127.0.0.1";
+			user.PhoneNumber = "7777";
+
+			_dbContext.Users.Add(user);
+			_dbContext.SaveChanges();
 
 			MessageBox.Show("Registration successful!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
 
