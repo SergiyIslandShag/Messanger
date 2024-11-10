@@ -16,7 +16,14 @@ namespace data_access
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer(@"workstation id=Messengerrrrr.mssql.somee.com;packet size=4096;user id=Nikita35_SQLLogin_1;pwd=ukqyc6pkqg;data source=Messengerrrrr.mssql.somee.com;persist security info=False;initial catalog=Messengerrrrr;TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer(@"workstation id=Messengerrrrr.mssql.somee.com;
+                                         packet size=4096;
+                                         user id=Nikita35_SQLLogin_1;
+                                         pwd=ukqyc6pkqg;
+                                         data source=Messengerrrrr.mssql.somee.com;
+                                         persist security info=False;
+                                         initial catalog=Messengerrrrr;
+                                         TrustServerCertificate=True");
 
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)

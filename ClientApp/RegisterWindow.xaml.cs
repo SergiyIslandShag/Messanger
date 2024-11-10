@@ -39,20 +39,25 @@ namespace ClientApp
 			user.PhoneNumber = phoneNumber;
 			user.Port = 4040;
 			user.ServerAddress = "127.0.0.1";
-			user.PhoneNumber = "7777";
 
-			_dbContext.Users.Add(user);
-			_dbContext.SaveChanges();
+			try
+			{
+				_dbContext.Users.Add(user);
 
-			MessageBox.Show("Registration successful!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+				_dbContext.SaveChanges();
 
-			this.Hide();
-			MainWindow mainWindow = new MainWindow();
-			mainWindow.Show();
+				MessageBox.Show("Registration successful!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
 
-			this.Close();
+				this.Hide();
+				MainWindow mainWindow = new MainWindow();
+				mainWindow.Show();
+				this.Close();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+			}
 		}
-
 		private void Login(object sender, RoutedEventArgs e)
 		{
 			Login loginWindow = new Login();
