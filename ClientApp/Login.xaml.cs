@@ -1,34 +1,53 @@
-﻿using System.Windows;
+﻿using data_access;
+using data_access.NewFolder;
+using System;
+using System.Linq;
+using System.Windows;
 
 namespace ClientApp
 {
 	public partial class Login : Window
 	{
-		private Window _registrationWindow;
-		private RegisterWindow registerWindow;
+		private readonly MessangerDBContext _dbContext2;
 
 		public Login()
 		{
 			InitializeComponent();
+			_dbContext2 = new MessangerDBContext();
 		}
 
-		private void LoginC(object sender, RoutedEventArgs e)
+		private void LoginС(object sender, RoutedEventArgs e)
 		{
-			string username = UsernameTextBox.Text.Trim();
-			string password = PasswordBox.Password.Trim();
+			string name = NameTextBox.Text;
+			string email = EmailTextBox.Text;
+			string password = PasswordBox.Password;
 
-			if (username == "admin" && password == "password123")
+			if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
 			{
+				MessageBox.Show("Please fill in all fields.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+				return;
+			}
+
+			try
+			{
+				User user = _dbContext2.Users.FirstOrDefault(u => u.Name == name && u.Email == email && u.Password == password);
+
+				if (user == null)
+				{
+					MessageBox.Show("Invalid credentials. Please check your name, email, and password.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+					return;
+				}
+
+				// Успішний вхід
 				MessageBox.Show("Login successful!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
 
 				MainWindow mainWindow = new MainWindow();
 				mainWindow.Show();
 				this.Close();
-				_registrationWindow?.Close();
 			}
-			else
+			catch (Exception ex)
 			{
-				MessageBox.Show("Invalid username or password.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+				MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
 			}
 		}
 	}
