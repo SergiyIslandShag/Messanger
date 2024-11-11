@@ -19,8 +19,7 @@
             <Label Content="Email:" FontWeight="Black" Foreground="White"></Label>
             <TextBox Name="EmailTextBox" Margin="0,0,0,10" Height="25" ></TextBox>
 
-            <Label Content="Password:" FontWeight="Black" Foreground="White" ></Label>
-            <PasswordBox Name="PasswordBox" Margin="0,0,0,20" Height="25" ></PasswordBox>
+            
 
             <Button FontWeight="Black" Click="Button_Click">Add Contact</Button>
             

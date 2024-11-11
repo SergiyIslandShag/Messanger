@@ -20,6 +20,7 @@ using data_access.NewFolder;
 using Microsoft.EntityFrameworkCore;
 using data_access;
 
+
 namespace ClientApp
 {
 
@@ -27,13 +28,15 @@ namespace ClientApp
 	{
 		IPEndPoint serverEndPoint;
 		ObservableCollection<MessageInfo> messages = new ObservableCollection<MessageInfo>();
-		ObservableCollection<User> users = new ObservableCollection<User>();
+		ViewModel ViewModel;
         MessangerDBContext messangerDBContext = new MessangerDBContext();
         UdpClient client;
+        
 		public MainWindow()
 		{
 			InitializeComponent();
-			this.DataContext = users;
+			ViewModel = new ViewModel();
+			this.DataContext = ViewModel;
 			client = new UdpClient();
 			//string address = ConfigurationManager.AppSettings["ServerAddress"]!;
 			//short port = short.Parse(ConfigurationManager.AppSettings["ServerPort"]!);
@@ -73,12 +76,26 @@ namespace ClientApp
 
 
 			addContact.ShowDialog();
-		
-                users.Add(userr);
-                messangerDBContext.Add(userr);
-                messangerDBContext.SaveChanges();
-           
+
+			ViewModel.Add(userr);
+            messangerDBContext.Add(userr);
+            messangerDBContext.SaveChanges();
+
 			
         }
-	}
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+			MessageBox.Show(ViewModel.SelectedItem.Name);
+        }
+    }
+	public class ViewModel 
+	{
+        public ObservableCollection<User> users = new ObservableCollection<User>();
+        public User SelectedItem { get; set; }
+		public void Add(User user)
+		{
+            users.Add(user);
+        }
+    }
 }

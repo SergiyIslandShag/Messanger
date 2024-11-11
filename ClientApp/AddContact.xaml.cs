@@ -36,7 +36,7 @@ namespace ClientApp
         {
             User.Name =NameTextBox.Text;
             User.Email =EmailTextBox.Text;
-            User.Password = PasswordBox.Password;
+            User.Password = "11111111";
             this.Hide();
         }
     }
