@@ -19,7 +19,10 @@
 
         </StackPanel>
         <ListBox Background="DarkGray" Name="userInfoListBox" Grid.Column="1" Margin="10">
-            <ListBoxItem FontWeight="Bold">Dani</ListBoxItem>
+            <!--<ListBoxItem FontWeight="Bold" Name="UserFoto" Height="124" Width="134" Margin="0,50,0,0"></ListBoxItem>
+            <ListBoxItem FontWeight="Bold" Name="UserName" Height="20" Width="207" Margin="0,10,0,10"></ListBoxItem>
+            <ListBoxItem FontWeight="Bold" Name="UserEmail" Height="20" Width="207" Margin="0,10,0,10"></ListBoxItem>
+            <ListBoxItem FontWeight="Bold" Name="UserPhonNum" Height="20" Width="207" Margin="0,10,0,10"></ListBoxItem>-->
         </ListBox>
     </Grid>
 </Window>

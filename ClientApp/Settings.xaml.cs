@@ -11,17 +11,24 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Microsoft.EntityFrameworkCore;
+using data_access;
+using data_access.NewFolder;
 
 namespace ClientApp
 {
 	public partial class Settings : Window
 	{
+        private readonly MessangerDBContext dbContext;
 		private const string PremiumCode = "timlidtop";
 		private bool isPremiumActivated = false;
 		public Settings()
 		{
 			InitializeComponent();
-		}
+            dbContext = new MessangerDBContext();
+			userInfoListBox.ItemsSource= dbContext.Users.ToList();	
+        }
+
 
 		private void btnPremium_Click(object sender, RoutedEventArgs e)
 		{
@@ -29,8 +36,7 @@ namespace ClientApp
 			{
 				if (!isPremiumActivated)
 				{
-					userInfoListBox.Items.Clear();
-					userInfoListBox.Items.Add("Dani ★");
+
 					isPremiumActivated = true;
 					MessageBox.Show("Premium version activated!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
 				}
@@ -43,7 +49,7 @@ namespace ClientApp
 			{
 				MessageBox.Show("Invalid code. Please try again.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
 			}
-
 		}
-	}
+	
+    }
 }
