@@ -38,7 +38,6 @@ namespace ClientApp
 					return;
 				}
 
-				// Успішний вхід
 				MessageBox.Show("Login successful!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
 
 				MainWindow mainWindow = new MainWindow();
