@@ -27,6 +27,10 @@ namespace data_access.NewFolder
             PhoneNumber = phoneNumber;
 			ServerAddress = address;
             Port = port;
-        }               
+        }
+        public override string ToString()
+        {
+            return $"{Name }";
+        }
     }
 }
