@@ -30,9 +30,10 @@
                 <ColumnDefinition Width="3*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <ListBox Grid.Column="0" Margin="5,-50,5,5" Background="White"  ItemsSource="{Binding Path=users}"
+            <ListBox Grid.Column="0" Margin="5,-50,5,5" Background="White" 
+                 ItemsSource="{Binding Path= Users}"
                  SelectedItem="{Binding Path = SelectedItem}"
-                 DisplayMemberPath="Name" SelectionChanged="ListBox_SelectionChanged">
+                 SelectionChanged="ListBox_SelectionChanged">
             </ListBox>
 
             <StackPanel Grid.Column="1" Margin="5">
