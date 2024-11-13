@@ -1,7 +1,7 @@
 ﻿<Window x:Class="ClientApp.RegisterWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Registration" Height="450" Width="600">
+        Title="Registration" Height="450" Width="530">
     <Window.Background>
         <ImageBrush ImageSource="https://img.freepik.com/free-photo/purple-iridescent-texture-background_23-2151839362.jpg?semt=ais_hybrid"></ImageBrush>
     </Window.Background>
