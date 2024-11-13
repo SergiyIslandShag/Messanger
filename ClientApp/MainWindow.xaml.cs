@@ -91,7 +91,8 @@ namespace ClientApp
     }
 	public class ViewModel 
 	{
-        public ObservableCollection<User> users = new ObservableCollection<User>();
+        private ObservableCollection<User> users = new ObservableCollection<User>();
+		public IEnumerable<User> Users => users;
         public User SelectedItem { get; set; }
 		public void Add(User user)
 		{
