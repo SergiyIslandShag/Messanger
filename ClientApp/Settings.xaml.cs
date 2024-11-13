@@ -50,6 +50,5 @@ namespace ClientApp
 				MessageBox.Show("Invalid code. Please try again.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
 			}
 		}
-	
     }
 }
