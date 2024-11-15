@@ -21,6 +21,7 @@ using Microsoft.EntityFrameworkCore;
 using data_access;
 
 
+
 namespace ClientApp
 {
 
@@ -39,10 +40,34 @@ namespace ClientApp
 			ViewModel = new ViewModel();
 			this.DataContext = ViewModel;
 			client = new UdpClient();
-			//string address = ConfigurationManager.AppSettings["ServerAddress"]!;
-			//short port = short.Parse(ConfigurationManager.AppSettings["ServerPort"]!);
-			//serverEndPoint = new IPEndPoint(IPAddress.Parse(address), port);
+			string address = ConfigurationManager.AppSettings["ServerAddress"]!;
+			short port = short.Parse(ConfigurationManager.AppSettings["ServerPort"]!);
+			serverEndPoint = new IPEndPoint(IPAddress.Parse(address), port);
 		}
+        //join
+        private void JoinBtn(object sender, RoutedEventArgs e)
+        {
+            string message = "$<join>";
+            SendMessage(message);
+            Listen();
+        }
+        private void Send(object sender, RoutedEventArgs e)
+        {
+            
+            string message = textbox22.Text;
+            SendMessage(message);
+            MessageInfo messageInfo = new MessageInfo(message , DateTime.Now);
+            ViewModel.Add2(messageInfo);
+           // messangerDBContext.Add(messageInfo);
+           // messangerDBContext.SaveChanges();
+        }
+        private async void SendMessage(string message)
+        {
+            byte[] data = Encoding.UTF8.GetBytes(message);
+            await client.SendAsync(data, data.Length, serverEndPoint);
+            
+        }
+        private async void Listen()
         public MainWindow(User user)
         {
             InitializeComponent();
@@ -57,22 +82,14 @@ namespace ClientApp
 
         private void Send(object sender, RoutedEventArgs e)
         {
-            string message = textbox.Text;
-            if (!string.IsNullOrEmpty(message))
+            while (true)
             {
-                SendMessage(message);
-                textbox.Clear();
+                var data = await client.ReceiveAsync();
+                string message = Encoding.UTF8.GetString(data.Buffer);
+                messages.Add(new MessageInfo(message, DateTime.Now));
             }
         }
-		private async void SendMessage(string message)
-		{
-			if (serverEndPoint != null)
-			{
-				byte[] data = Encoding.UTF8.GetBytes(message);
-				await client.SendAsync(data, serverEndPoint);
-			}
-		}
-		private void Settings(object sender, RoutedEventArgs e)
+        private void Settings(object sender, RoutedEventArgs e)
 		{
 			Settings settings = new Settings(userMain);
 			settings.Show();
@@ -100,15 +117,28 @@ namespace ClientApp
         {
 			MessageBox.Show(ViewModel.SelectedItem.Name);
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
-	public class ViewModel 
+    public class ViewModel 
 	{
         private ObservableCollection<User> users = new ObservableCollection<User>();
+        private ObservableCollection<MessageInfo> messages = new ObservableCollection<MessageInfo>();
 		public IEnumerable<User> Users => users;
+        public IEnumerable<MessageInfo> Messages => messages;
         public User SelectedItem { get; set; }
-		public void Add(User user)
+		public void Add(User user )
 		{
             users.Add(user);
+            
+        }
+        public void Add2( MessageInfo mess)
+        {
+           
+            messages.Add(mess);
         }
     }
 }
