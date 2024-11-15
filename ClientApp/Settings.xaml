@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ClientApp"
         Title="Settings" Height="450" Width="550">
     <Window.Background>
-        <ImageBrush ImageSource="https://img.freepik.com/premium-photo/neon-navy-abstract-creative-background-design_851755-317694.jpg?w=360" />
+        <ImageBrush ImageSource="https://img.freepik.com/premium-photo/neon-navy-abstract-creative-background-design_851755-317694.jpg?w=360"></ImageBrush>
     </Window.Background>
     <Grid Margin="10">
         <Grid.ColumnDefinitions>

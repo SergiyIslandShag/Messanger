@@ -3,14 +3,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
        
 
-        Title="Messenger" Height="650" Width="850" >
+        Title="Messenger" Height="650" Width="850">
     <Window.Background>
         <ImageBrush ImageSource="https://img.freepik.com/premium-photo/neon-navy-abstract-creative-background-design_851755-317694.jpg?w=360"></ImageBrush>
     </Window.Background>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="31.04"></RowDefinition>
-            <RowDefinition Height="18.96"/>
+            <RowDefinition Height="18.96"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
