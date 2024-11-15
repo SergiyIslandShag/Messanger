@@ -32,6 +32,7 @@ namespace ClientApp
 		ViewModel ViewModel;
         MessangerDBContext messangerDBContext = new MessangerDBContext();
         UdpClient client;
+		User userMain;
         
 		public MainWindow()
 		{
@@ -67,6 +68,19 @@ namespace ClientApp
             
         }
         private async void Listen()
+        public MainWindow(User user)
+        {
+            InitializeComponent();
+            ViewModel = new ViewModel();
+            this.DataContext = ViewModel;
+            client = new UdpClient();
+			userMain = user;
+            //string address = ConfigurationManager.AppSettings["ServerAddress"]!;
+            //short port = short.Parse(ConfigurationManager.AppSettings["ServerPort"]!);
+            //serverEndPoint = new IPEndPoint(IPAddress.Parse(address), port);
+        }
+
+        private void Send(object sender, RoutedEventArgs e)
         {
             while (true)
             {
@@ -77,7 +91,7 @@ namespace ClientApp
         }
         private void Settings(object sender, RoutedEventArgs e)
 		{
-			Settings settings = new Settings();
+			Settings settings = new Settings(userMain);
 			settings.Show();
 		}
 

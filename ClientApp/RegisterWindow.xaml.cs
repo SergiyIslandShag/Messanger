@@ -80,7 +80,7 @@ namespace ClientApp
 				MessageBox.Show("Registration successful!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
 
 				this.Hide();
-				MainWindow mainWindow = new MainWindow();
+				MainWindow mainWindow = new MainWindow(user);
 				mainWindow.Show();
 				this.Close();
 			}

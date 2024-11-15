@@ -19,8 +19,6 @@
             <Label Content="Email:" FontWeight="Black" Foreground="White"></Label>
             <TextBox Name="EmailTextBox" Margin="0,0,0,10" Height="25" ></TextBox>
 
-            
-
             <Button FontWeight="Black" Click="Button_Click">Add Contact</Button>
             
         </StackPanel>
